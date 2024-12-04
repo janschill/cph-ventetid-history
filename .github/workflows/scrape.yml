@@ -1,0 +1,25 @@
+name: Scrape waiting time in Copenhagen Airport
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *" # every 15 minutes
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v4
+    - name: Fetch latest data
+      run: |-
+        curl "https://cphwaitingtime.z6.web.core.windows.net/waitingtime.json" | jq > cph-ventetid.json
+    - name: Commit and push if changed
+      run: |
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
