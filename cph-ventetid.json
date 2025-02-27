@@ -1,9 +1,9 @@
 {
   "t2WaitingTime": "0",
-  "t2WaitingTimeInterval": "0-2",
+  "t2WaitingTimeInterval": "3-5",
   "t3WaitingTime": "0",
-  "t3WaitingTimeInterval": "0-2",
+  "t3WaitingTimeInterval": "3-5",
   "supplier": "CPH",
   "documentName": "security",
-  "deliveryId": "2025-02-27T02:44:00"
+  "deliveryId": "2025-02-27T03:15:00"
 }
