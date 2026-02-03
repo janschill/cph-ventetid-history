@@ -3,8 +3,6 @@ name: Scrape waiting time in Copenhagen Airport
 on:
   push:
   workflow_dispatch:
-  schedule:
-    - cron: "*/15 * * * *" # every 15 minutes
 
 jobs:
   scrape:
